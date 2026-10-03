@@ -1,0 +1,58 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Monstera demo · You are on staff at an association whose members are organizations",
+		"description": "You are Avery Lin, on staff at the association. Three member organizations with their own rosters and sub-groups. You publish reports, post alerts and keep the resources current.",
+		"author": "christopherhopkins"
+	},
+	"landingPage": "/wp-admin/admin.php?page=monstera",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"siteOptions": {
+		"blogname": "Monstera demo · An association with member organizations",
+		"blogdescription": "Member orgs manage their own rosters and sub-groups. Content and resources reach the right people.",
+		"permalink_structure": "/%postname%/"
+	},
+	"steps": [
+		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"MONSTERA_DEMO_PROGRAM": "association",
+				"MONSTERA_DEMO_PERSONA": "association-staff"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://christopherhopkins.github.io/monstera-demos/monstera.zip?v=b4fea134"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "monstera"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://christopherhopkins.github.io/monstera-demos/monstera-demo.zip?v=0012a814"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "monstera-demo"
+			}
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp monstera seed --program=association"
+		},
+		{
+			"step": "login",
+			"username": "avery",
+			"password": "password"
+		}
+	]
+}

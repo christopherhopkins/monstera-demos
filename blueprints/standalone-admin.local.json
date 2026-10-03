@@ -1,0 +1,44 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Monstera demo · You run a program whose members join as individuals",
+		"description": "You are Avery Lin, who runs the program. Four members and no organizations. You publish to everyone, answer support and keep the renewal form where people can find it.",
+		"author": "christopherhopkins"
+	},
+	"landingPage": "/wp-admin/admin.php?page=monstera",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"siteOptions": {
+		"blogname": "Monstera demo · Individual members, no organizations",
+		"blogdescription": "People sign up on their own. A simpler portal: content, resources, a directory if you want one.",
+		"permalink_structure": "/%postname%/"
+	},
+	"steps": [
+		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"MONSTERA_DEMO_PROGRAM": "standalone",
+				"MONSTERA_DEMO_PERSONA": "standalone-admin"
+			}
+		},
+		{
+			"step": "activatePlugin",
+			"pluginPath": "monstera/monstera.php"
+		},
+		{
+			"step": "activatePlugin",
+			"pluginPath": "monstera-demo/monstera-demo.php"
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp monstera seed --program=standalone"
+		},
+		{
+			"step": "login",
+			"username": "avery",
+			"password": "password"
+		}
+	]
+}

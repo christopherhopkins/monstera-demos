@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Monstera live demos</title>
+	<meta name="description" content="Try Monstera, member and client portals for WordPress, as the person who would use it: eight demos that boot in your browser, one per role in each kind of program.">
+	<meta name="color-scheme" content="light dark">
+	<link rel="preload" href="fonts/Fraunces-Variable.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="launcher.css">
+	<script src="launcher.js"></script>
+</head>
+<body class="m-launcher">
+	<a class="m-skip" href="#demos">Skip to the demos</a>
+	<header class="m-launcher__head">
+		<div class="m-launcher__brand">
+			<svg class="m-sprig" viewBox="0 0 140 140" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M70 130 C 70 110, 64 90, 58 76 C 54 66, 52 56, 56 46"/><path d="M58 76 C 46 70, 36 62, 30 50"/><path d="M30 50 C 22 44, 18 36, 22 28 C 26 22, 36 22, 42 28 C 48 34, 48 44, 42 50 C 38 53, 32 52, 30 50 Z"/><path d="M28 38 C 30 36, 34 35, 36 38"/><path d="M32 44 C 34 42, 38 41, 40 44"/><path d="M62 60 C 76 56, 88 50, 92 38"/><path d="M92 38 C 102 32, 112 32, 116 40 C 120 50, 116 60, 106 62 C 98 62, 92 56, 92 48 C 92 42, 92 40, 92 38 Z"/><path d="M100 42 C 102 40, 106 39, 108 42"/><path d="M104 50 C 106 48, 110 47, 112 50"/><path d="M56 46 C 50 36, 52 22, 62 16 C 74 12, 84 22, 80 36 C 76 46, 64 50, 56 46 Z"/><path d="M62 28 C 64 26, 68 25, 70 28"/><path d="M64 36 C 68 34, 72 33, 74 36"/></g></svg>
+			<span class="m-launcher__name">Monstera</span>
+			<span class="m-launcher__kicker">Live demos</span>
+		</div>
+		<div class="m-theme" role="group" aria-label="Theme">
+			<button type="button" data-theme-set="light" aria-pressed="false" aria-label="Light theme"><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="10" cy="10" r="3.5"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.3 4.3l1.4 1.4M14.3 14.3l1.4 1.4M4.3 15.7l1.4-1.4M14.3 5.7l1.4-1.4"/></svg></button>
+			<button type="button" data-theme-set="dark" aria-pressed="false" aria-label="Dark theme"><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M16 12.5A7 7 0 0 1 7.5 4a7 7 0 1 0 8.5 8.5Z"/></svg></button>
+		</div>
+	</header>
+
+	<main id="demos" class="m-launcher__main">
+		<section class="m-hero" aria-labelledby="hero-title">
+			<h1 class="m-hero__title" id="hero-title">Try Monstera as the person who would use it.</h1>
+			<p class="m-hero__lead">Member and client portals for WordPress, one plugin, three kinds of program. Pick a point of view below. The demo opens in your browser, already signed in as that person, with a note at the top saying who you are and what to try.</p>
+			<dl class="m-hero__facts">
+				<div><dt>What you get</dt><dd>A throwaway WordPress site running in your browser on WordPress Playground, with Monstera installed and a program seeded for that use case.</dd></div>
+				<div><dt>What it costs you</dt><dd>About a minute on the first boot. Nothing is saved when you close the tab, and no email ever leaves it.</dd></div>
+				<div><dt>Signing in</dt><dd>Done for you. Every person in a demo uses the password <code>password</code>, should you want to switch.</dd></div>
+			</dl>
+		</section>
+
+		<section class="m-program" id="agency" aria-labelledby="agency-title">
+			<header class="m-program__head">
+				<p class="m-program__eyebrow"><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16c0-7 4-11 12-12-1 8-5 12-12 12Z"/><path d="M4 16 13 7"/></svg>Use case</p>
+				<h2 class="m-program__title" id="agency-title">An agency with clients</h2>
+				<p class="m-program__lead">Each client is an organization with its own portal. Projects are the spine: discovery, deliverables, status.</p>
+			</header>
+			<div class="m-program__grid">
+			<article class="m-persona" id="agency-admin">
+				<p class="m-persona__role">Admin <span aria-hidden="true">·</span> <span class="m-persona__login">avery</span></p>
+				<h3 class="m-persona__title">You run an agency with clients whose projects are in progress, completed and still to come</h3>
+				<p class="m-persona__context">Two clients, eight projects: some in progress, one completed, others still proposed. Everything the agency publishes, posts and answers starts here.</p>
+				<div class="m-persona__try">
+					<span class="m-persona__try-label" id="agency-admin-try">Try</span>
+					<ul aria-labelledby="agency-admin-try"><li>Review the discovery answers on Headless commerce migration</li><li>Answer Sasha's support request about the discovery form</li><li>Ask who can open the Headless catalog architecture draft</li></ul>
+				</div>
+				<a class="m-launch" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fchristopherhopkins.github.io%2Fmonstera-demos%2Fblueprints%2Fagency-admin.json" target="_blank" rel="noopener">Launch demo<span class="m-launch__hint"> · opens in a new tab</span></a>
+			</article>
+			<article class="m-persona" id="agency-manager">
+				<p class="m-persona__role">Organization manager <span aria-hidden="true">·</span> <span class="m-persona__login">sasha</span></p>
+				<h3 class="m-persona__title">Your company is a client of an agency, and you are its main point of contact</h3>
+				<p class="m-persona__context">Acme is a client of Northwind &amp; Co. You approve discovery, open deliverables and keep the roster within its seat limit.</p>
+				<div class="m-persona__try">
+					<span class="m-persona__try-label" id="agency-manager-try">Try</span>
+					<ul aria-labelledby="agency-manager-try"><li>Submit the discovery on Member loyalty pilot</li><li>Open the Site analytics · November 2025 deliverable</li><li>Add someone to your roster</li></ul>
+				</div>
+				<a class="m-launch" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fchristopherhopkins.github.io%2Fmonstera-demos%2Fblueprints%2Fagency-manager.json" target="_blank" rel="noopener">Launch demo<span class="m-launch__hint"> · opens in a new tab</span></a>
+			</article>
+			<article class="m-persona" id="agency-member">
+				<p class="m-persona__role">Member <span aria-hidden="true">·</span> <span class="m-persona__login">sam</span></p>
+				<h3 class="m-persona__title">Your company is a client of an agency, and you use the client portal without managing the account</h3>
+				<p class="m-persona__context">Acme is a client of Northwind &amp; Co. You follow the projects you are on, read what the agency delivers and ask when something is off.</p>
+				<div class="m-persona__try">
+					<span class="m-persona__try-label" id="agency-member-try">Try</span>
+					<ul aria-labelledby="agency-member-try"><li>See where Headless commerce migration stands</li><li>Open the Operations runbook · 2026 edition</li><li>Send a support request</li></ul>
+				</div>
+				<a class="m-launch" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fchristopherhopkins.github.io%2Fmonstera-demos%2Fblueprints%2Fagency-member.json" target="_blank" rel="noopener">Launch demo<span class="m-launch__hint"> · opens in a new tab</span></a>
+			</article>
+			</div>
+		</section>
+		<section class="m-program" id="association" aria-labelledby="association-title">
+			<header class="m-program__head">
+				<p class="m-program__eyebrow"><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16c0-7 4-11 12-12-1 8-5 12-12 12Z"/><path d="M4 16 13 7"/></svg>Use case</p>
+				<h2 class="m-program__title" id="association-title">An association with member organizations</h2>
+				<p class="m-program__lead">Member orgs manage their own rosters and sub-groups. Content and resources reach the right people.</p>
+			</header>
+			<div class="m-program__grid">
+			<article class="m-persona" id="association-staff">
+				<p class="m-persona__role">Admin <span aria-hidden="true">·</span> <span class="m-persona__login">avery</span></p>
+				<h3 class="m-persona__title">You are on staff at an association whose members are organizations</h3>
+				<p class="m-persona__context">Three member organizations with their own rosters and sub-groups. You publish reports, post alerts and keep the resources current.</p>
+				<div class="m-persona__try">
+					<span class="m-persona__try-label" id="association-staff-try">Try</span>
+					<ul aria-labelledby="association-staff-try"><li>Post an alert to Highline Capital Partners</li><li>Check who can open the Q4 board package</li><li>See this week's activity in Reports</li></ul>
+				</div>
+				<a class="m-launch" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fchristopherhopkins.github.io%2Fmonstera-demos%2Fblueprints%2Fassociation-staff.json" target="_blank" rel="noopener">Launch demo<span class="m-launch__hint"> · opens in a new tab</span></a>
+			</article>
+			<article class="m-persona" id="association-manager">
+				<p class="m-persona__role">Organization manager <span aria-hidden="true">·</span> <span class="m-persona__login">marcus</span></p>
+				<h3 class="m-persona__title">Your organization is a member of an association, and you manage its roster and sub-groups</h3>
+				<p class="m-persona__context">Highline is a member organization. You keep the roster, chair the Investment Committee and open what the association publishes for you.</p>
+				<div class="m-persona__try">
+					<span class="m-persona__try-label" id="association-manager-try">Try</span>
+					<ul aria-labelledby="association-manager-try"><li>Open the Q4 board package for the Investment Committee</li><li>Add someone to Highline's roster</li><li>Look in on Member Outreach</li></ul>
+				</div>
+				<a class="m-launch" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fchristopherhopkins.github.io%2Fmonstera-demos%2Fblueprints%2Fassociation-manager.json" target="_blank" rel="noopener">Launch demo<span class="m-launch__hint"> · opens in a new tab</span></a>
+			</article>
+			<article class="m-persona" id="association-member">
+				<p class="m-persona__role">Member <span aria-hidden="true">·</span> <span class="m-persona__login">priya</span></p>
+				<h3 class="m-persona__title">Your organization is a member of an association, and you use the member portal</h3>
+				<p class="m-persona__context">Highline is a member organization. You sit on the Investment Committee, read what reaches it and fill in the forms the association asks for.</p>
+				<div class="m-persona__try">
+					<span class="m-persona__try-label" id="association-member-try">Try</span>
+					<ul aria-labelledby="association-member-try"><li>Read the FY26 budget proposal</li><li>Fill in the Annual member disclosure</li><li>Find Diane Okafor in the directory</li></ul>
+				</div>
+				<a class="m-launch" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fchristopherhopkins.github.io%2Fmonstera-demos%2Fblueprints%2Fassociation-member.json" target="_blank" rel="noopener">Launch demo<span class="m-launch__hint"> · opens in a new tab</span></a>
+			</article>
+			</div>
+		</section>
+		<section class="m-program" id="standalone" aria-labelledby="standalone-title">
+			<header class="m-program__head">
+				<p class="m-program__eyebrow"><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16c0-7 4-11 12-12-1 8-5 12-12 12Z"/><path d="M4 16 13 7"/></svg>Use case</p>
+				<h2 class="m-program__title" id="standalone-title">Individual members, no organizations</h2>
+				<p class="m-program__lead">People sign up on their own. A simpler portal: content, resources, a directory if you want one.</p>
+			</header>
+			<div class="m-program__grid">
+			<article class="m-persona" id="standalone-admin">
+				<p class="m-persona__role">Admin <span aria-hidden="true">·</span> <span class="m-persona__login">avery</span></p>
+				<h3 class="m-persona__title">You run a program whose members join as individuals</h3>
+				<p class="m-persona__context">Four members and no organizations. You publish to everyone, answer support and keep the renewal form where people can find it.</p>
+				<div class="m-persona__try">
+					<span class="m-persona__try-label" id="standalone-admin-try">Try</span>
+					<ul aria-labelledby="standalone-admin-try"><li>Answer River's support request about the renewal link</li><li>Publish something to everyone</li><li>See who is in the program</li></ul>
+				</div>
+				<a class="m-launch" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fchristopherhopkins.github.io%2Fmonstera-demos%2Fblueprints%2Fstandalone-admin.json" target="_blank" rel="noopener">Launch demo<span class="m-launch__hint"> · opens in a new tab</span></a>
+			</article>
+			<article class="m-persona" id="standalone-member">
+				<p class="m-persona__role">Individual member <span aria-hidden="true">·</span> <span class="m-persona__login">river</span></p>
+				<h3 class="m-persona__title">You are an individual member with no organization behind you</h3>
+				<p class="m-persona__context">Nobody set this portal up for you and there is no account team to ask: content, resources and support come from the program itself.</p>
+				<div class="m-persona__try">
+					<span class="m-persona__try-label" id="standalone-member-try">Try</span>
+					<ul aria-labelledby="standalone-member-try"><li>Read the Program handbook · 2026</li><li>Open the Annual renewal form</li><li>Finish your profile</li></ul>
+				</div>
+				<a class="m-launch" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fchristopherhopkins.github.io%2Fmonstera-demos%2Fblueprints%2Fstandalone-member.json" target="_blank" rel="noopener">Launch demo<span class="m-launch__hint"> · opens in a new tab</span></a>
+			</article>
+			</div>
+		</section>
+	</main>
+
+	<footer class="m-launcher__foot">
+		<p class="m-launcher__build">Monstera 1.0.0-alpha · 428cb98 · 2026-10-03</p>
+		<p class="m-launcher__note">Demos run on <a href="https://playground.wordpress.net/" rel="noopener">WordPress Playground</a>. The people and organizations in them are fictional.</p>
+	</footer>
+</body>
+</html>

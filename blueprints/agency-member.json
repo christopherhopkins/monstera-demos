@@ -1,0 +1,58 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Monstera demo · Your company is a client of an agency, and you use the client portal without managing the account",
+		"description": "You are Sam Patel, production manager at Acme Coffee Roasters. Acme is a client of Northwind & Co. You follow the projects you are on, read what the agency delivers and ask when something is off.",
+		"author": "christopherhopkins"
+	},
+	"landingPage": "/portal/",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"siteOptions": {
+		"blogname": "Monstera demo · An agency with clients",
+		"blogdescription": "Each client is an organization with its own portal. Projects are the spine: discovery, deliverables, status.",
+		"permalink_structure": "/%postname%/"
+	},
+	"steps": [
+		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"MONSTERA_DEMO_PROGRAM": "agency",
+				"MONSTERA_DEMO_PERSONA": "agency-member"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://christopherhopkins.github.io/monstera-demos/monstera.zip?v=b4fea134"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "monstera"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://christopherhopkins.github.io/monstera-demos/monstera-demo.zip?v=0012a814"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "monstera-demo"
+			}
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp monstera seed --program=agency"
+		},
+		{
+			"step": "login",
+			"username": "sam",
+			"password": "password"
+		}
+	]
+}
