@@ -1,0 +1,58 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Monstera demo · Your organization is a member of an association, and you manage its roster and sub-groups",
+		"description": "You are Marcus Webb, the organization manager at Highline Capital Partners. Highline is a member organization. You keep the roster, chair the Investment Committee and open what the association publishes for you.",
+		"author": "christopherhopkins"
+	},
+	"landingPage": "/portal/",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"siteOptions": {
+		"blogname": "Monstera demo · An association with member organizations",
+		"blogdescription": "Member orgs manage their own rosters and sub-groups. Content and resources reach the right people.",
+		"permalink_structure": "/%postname%/"
+	},
+	"steps": [
+		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"MONSTERA_DEMO_PROGRAM": "association",
+				"MONSTERA_DEMO_PERSONA": "association-manager"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://christopherhopkins.github.io/monstera-demos/monstera.zip?v=e5260a00"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "monstera"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://christopherhopkins.github.io/monstera-demos/monstera-demo.zip?v=a0acc4a8"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "monstera-demo"
+			}
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp monstera seed --program=association"
+		},
+		{
+			"step": "login",
+			"username": "marcus",
+			"password": "password"
+		}
+	]
+}

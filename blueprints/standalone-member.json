@@ -1,0 +1,58 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Monstera demo · You are an individual member with no organization behind you",
+		"description": "You are River Cole, an individual member of the program. Nobody set this portal up for you and there is no account team to ask: content, resources and support come from the program itself.",
+		"author": "christopherhopkins"
+	},
+	"landingPage": "/portal/",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"siteOptions": {
+		"blogname": "Monstera demo · Individual members, no organizations",
+		"blogdescription": "People sign up on their own. A simpler portal: content, resources, a directory if you want one.",
+		"permalink_structure": "/%postname%/"
+	},
+	"steps": [
+		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"MONSTERA_DEMO_PROGRAM": "standalone",
+				"MONSTERA_DEMO_PERSONA": "standalone-member"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://christopherhopkins.github.io/monstera-demos/monstera.zip?v=e5260a00"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "monstera"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://christopherhopkins.github.io/monstera-demos/monstera-demo.zip?v=a0acc4a8"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "monstera-demo"
+			}
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp monstera seed --program=standalone"
+		},
+		{
+			"step": "login",
+			"username": "river",
+			"password": "password"
+		}
+	]
+}
