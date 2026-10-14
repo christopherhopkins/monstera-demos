@@ -1,0 +1,44 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Monstera demo · You are on the team at an agency, and you run one client's project day to day",
+		"description": "You are Rowan Blake, a project manager at Northwind & Co. You are assigned to Acme Coffee Roasters and lead its Subscription onboarding redesign. The Team page shows who else is on the team and which clients each one knows; Settings and Tools are the Team managers' to open.",
+		"author": "christopherhopkins"
+	},
+	"landingPage": "/wp-admin/admin.php?page=monstera-team",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"siteOptions": {
+		"blogname": "Monstera demo · An agency with clients",
+		"blogdescription": "Each client is an organization with its own portal. Projects are the spine: discovery, deliverables, status.",
+		"permalink_structure": "/%postname%/"
+	},
+	"steps": [
+		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"MONSTERA_DEMO_PROGRAM": "agency",
+				"MONSTERA_DEMO_PERSONA": "agency-team-member"
+			}
+		},
+		{
+			"step": "activatePlugin",
+			"pluginPath": "monstera/monstera.php"
+		},
+		{
+			"step": "activatePlugin",
+			"pluginPath": "monstera-demo/monstera-demo.php"
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp monstera seed --program=agency"
+		},
+		{
+			"step": "login",
+			"username": "rowan",
+			"password": "password"
+		}
+	]
+}

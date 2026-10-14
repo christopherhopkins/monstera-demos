@@ -1,0 +1,44 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Monstera demo · You run an agency with clients whose projects are in progress, completed and still to come",
+		"description": "You are Avery Lin, who runs Northwind & Co. Two clients, eight projects: some in progress, one completed, others still proposed. Everything the agency publishes, posts and answers starts here.",
+		"author": "christopherhopkins"
+	},
+	"landingPage": "/wp-admin/admin.php?page=monstera",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"siteOptions": {
+		"blogname": "Monstera demo · An agency with clients",
+		"blogdescription": "Each client is an organization with its own portal. Projects are the spine: discovery, deliverables, status.",
+		"permalink_structure": "/%postname%/"
+	},
+	"steps": [
+		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"MONSTERA_DEMO_PROGRAM": "agency",
+				"MONSTERA_DEMO_PERSONA": "agency-admin"
+			}
+		},
+		{
+			"step": "activatePlugin",
+			"pluginPath": "monstera/monstera.php"
+		},
+		{
+			"step": "activatePlugin",
+			"pluginPath": "monstera-demo/monstera-demo.php"
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp monstera seed --program=agency"
+		},
+		{
+			"step": "login",
+			"username": "avery",
+			"password": "password"
+		}
+	]
+}

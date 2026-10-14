@@ -1,0 +1,44 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Monstera demo · Your organization is a member of an association, and you use the member portal",
+		"description": "You are Priya Shah, senior analyst at Highline Capital Partners. Highline is a member organization. You sit on the Investment Committee, read what reaches it and fill in the forms the association asks for.",
+		"author": "christopherhopkins"
+	},
+	"landingPage": "/portal/",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"siteOptions": {
+		"blogname": "Monstera demo · An association with member organizations",
+		"blogdescription": "Member orgs manage their own rosters and sub-groups. Content and resources reach the right people.",
+		"permalink_structure": "/%postname%/"
+	},
+	"steps": [
+		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"MONSTERA_DEMO_PROGRAM": "association",
+				"MONSTERA_DEMO_PERSONA": "association-member"
+			}
+		},
+		{
+			"step": "activatePlugin",
+			"pluginPath": "monstera/monstera.php"
+		},
+		{
+			"step": "activatePlugin",
+			"pluginPath": "monstera-demo/monstera-demo.php"
+		},
+		{
+			"step": "wp-cli",
+			"command": "wp monstera seed --program=association"
+		},
+		{
+			"step": "login",
+			"username": "priya",
+			"password": "password"
+		}
+	]
+}
