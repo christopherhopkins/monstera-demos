@@ -1,0 +1,58 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Monstera demo · Your company is a client of an agency, and you are its main point of contact",
+		"description": "You are Sasha Reyes, the organization manager at Acme Coffee Roasters. Acme is a client of Northwind & Co. You approve discovery, open deliverables and keep the roster within its seat limit.",
+		"author": "christopherhopkins"
+	},
+	"landingPage": "/portal/",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"siteOptions": {
+		"blogname": "Monstera demo · An agency with clients",
+		"blogdescription": "Each client is an organization with its own portal. Projects are the spine: discovery, deliverables, status.",
+		"permalink_structure": "/%postname%/"
+	},
+	"steps": [
+		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"MONSTERA_DEMO_PROGRAM": "agency",
+				"MONSTERA_DEMO_PERSONA": "agency-manager"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://christopherhopkins.github.io/monstera-demos/monstera.zip?v=d1ff9e53"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "monstera"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://christopherhopkins.github.io/monstera-demos/monstera-demo.zip?v=d378d16d"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "monstera-demo"
+			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php\nrequire_once '/wordpress/wp-load.php';\n\\Monstera\\Plugin::runDevSeed( 'agency' );\n$state = (string) get_option( 'monstera_demo_seeded' );\nif ( '1' !== $state ) {\n\tthrow new RuntimeException( 'The \"agency\" program did not finish cleanly (state: ' . $state . ').' );\n}"
+		},
+		{
+			"step": "login",
+			"username": "sasha",
+			"password": "password"
+		}
+	]
+}

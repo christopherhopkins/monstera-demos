@@ -1,0 +1,58 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Monstera demo · You are on the team at an agency, and you run one client's project day to day",
+		"description": "You are Rowan Blake, a project manager at Northwind & Co. You are assigned to Acme Coffee Roasters and lead its Subscription onboarding redesign. The Team page shows who else is on the team and which clients each one knows; Settings and Tools are the Team managers' to open.",
+		"author": "christopherhopkins"
+	},
+	"landingPage": "/wp-admin/admin.php?page=monstera-team",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"siteOptions": {
+		"blogname": "Monstera demo · An agency with clients",
+		"blogdescription": "Each client is an organization with its own portal. Projects are the spine: discovery, deliverables, status.",
+		"permalink_structure": "/%postname%/"
+	},
+	"steps": [
+		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"MONSTERA_DEMO_PROGRAM": "agency",
+				"MONSTERA_DEMO_PERSONA": "agency-team-member"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://christopherhopkins.github.io/monstera-demos/monstera.zip?v=d1ff9e53"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "monstera"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://christopherhopkins.github.io/monstera-demos/monstera-demo.zip?v=d378d16d"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "monstera-demo"
+			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php\nrequire_once '/wordpress/wp-load.php';\n\\Monstera\\Plugin::runDevSeed( 'agency' );\n$state = (string) get_option( 'monstera_demo_seeded' );\nif ( '1' !== $state ) {\n\tthrow new RuntimeException( 'The \"agency\" program did not finish cleanly (state: ' . $state . ').' );\n}"
+		},
+		{
+			"step": "login",
+			"username": "rowan",
+			"password": "password"
+		}
+	]
+}
